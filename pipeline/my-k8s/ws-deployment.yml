@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-web-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: personal-web
+  template:
+    metadata:
+      labels:
+        app: personal-web
+    spec:
+      containers:
+      - name: personal-web
+        image: favboladale/webservers-image
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
