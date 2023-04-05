@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: royalboe/notes-api
+          image: favboladale/webservers-image
           ports:
             - containerPort: 3000
           resources:
